@@ -439,6 +439,16 @@ public class DiagnosticGroups {
       DiagnosticGroups.registerGroup("closureDepMethodUsageChecks",
           ProcessClosurePrimitives.INVALID_CLOSURE_CALL_ERROR);
 
+  // Added by Daniel Kasierer for TMC Bonds
+  public static final DiagnosticGroup EXTJS_ISSUES =
+      DiagnosticGroups.registerGroup("extjsIssues",
+          TypeValidator.HIDDEN_PROPERTY_MISMATCH, // mismatch signatures
+          TypeCheck.HIDDEN_SUPERCLASS_PROPERTY_MISMATCH, // mismatch signatures
+          CheckAccessControls.VISIBILITY_MISMATCH, // override with different visibility
+          //TypeValidator.DUP_VAR_DECLARATION, // redefined
+          TypeValidator.DUP_VAR_DECLARATION_TYPE_MISMATCH // redefined differently
+      );
+
   // This group exists so that generated code can suppress these
   // warnings. Not for general use. These diagnostics will most likely
   // be moved to the suspiciousCode group.

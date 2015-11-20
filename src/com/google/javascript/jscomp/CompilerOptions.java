@@ -704,6 +704,10 @@ public class CompilerOptions implements Serializable, Cloneable {
   /** Processes Polymer calls */
   boolean polymerPass;
 
+  // Added by Daniel Kasierer for TMC Bonds
+  /** Processes Ext aliases */
+  boolean extPass;
+
   /** Remove goog.abstractMethod assignments. */
   boolean removeAbstractMethods;
 
@@ -1085,6 +1089,8 @@ public class CompilerOptions implements Serializable, Cloneable {
     jqueryPass = false;
     angularPass = false;
     polymerPass = false;
+    // Added by Daniel Kasierer for TMC Bonds
+    extPass = false;
     removeAbstractMethods = true;
     removeClosureAsserts = false;
     stripTypes = Collections.emptySet();
@@ -1550,6 +1556,11 @@ public class CompilerOptions implements Serializable, Cloneable {
 
   public void setPolymerPass(boolean polymerPass) {
     this.polymerPass = polymerPass;
+  }
+
+  // Added by Daniel Kasierer for TMC Bonds
+  public void setExtPass(boolean extPass) {
+    this.extPass = extPass;
   }
 
   public void setCodingConvention(CodingConvention codingConvention) {

@@ -267,6 +267,11 @@ public final class DefaultPassConfig extends PassConfig {
       checks.add(angularPass);
     }
 
+    // Added by Daniel Kasierer for TMC Bonds
+    if (options.extPass) {
+      checks.add(extPass);
+    }
+
     checks.add(checkSideEffects);
 
     if (options.enables(DiagnosticGroups.MISSING_REQUIRE)
@@ -1050,6 +1055,15 @@ public final class DefaultPassConfig extends PassConfig {
     @Override
     protected HotSwapCompilerPass create(AbstractCompiler compiler) {
       return new AngularPass(compiler);
+    }
+  };
+
+  // Added by Daniel Kasierer for TMC Bonds
+  /** Extjs pre-processing pass */
+  private final PassFactory extPass = new PassFactory("extPass", true) {
+    @Override
+    protected CompilerPass create(AbstractCompiler compiler) {
+      return new ExtPass(compiler);
     }
   };
 

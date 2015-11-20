@@ -1127,6 +1127,9 @@ public class Node implements Cloneable, Serializable {
       sb.append("    ");
     }
     sb.append(n.toString());
+    // Added by Daniel Kasierer for TMC Bonds
+    // this is to help in debugging issues with JSDocInfo
+    sb.append(n.getJSDocInfo() == null ? "" : "##" + Token.name(n.getType()) + "###docInfo: " + n.getJSDocInfo().toStringVerbose() + "#####");
     sb.append('\n');
     for (Node cursor = n.getFirstChild();
          cursor != null;

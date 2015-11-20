@@ -2098,11 +2098,23 @@ abstract class AbstractCommandLineRunner<A extends Compiler,
 
     private boolean angularPass = false;
 
+    // Added by Daniel Kasierer for TMC Bonds
+    private boolean extPass = false;
+
     /**
      * Sets whether to process AngularJS-specific annotations.
      */
     CommandLineConfig setAngularPass(boolean angularPass) {
       this.angularPass = angularPass;
+      return this;
+    }
+
+    /**
+     * Sets whether to process Extjs aliases.
+     * **Added by Daniel Kasierer for TMC Bonds
+     */
+    CommandLineConfig setExtPass(boolean extPass) {
+      this.extPass = extPass;
       return this;
     }
 

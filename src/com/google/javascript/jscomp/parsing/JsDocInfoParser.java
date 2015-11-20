@@ -987,6 +987,13 @@ public final class JsDocInfoParser {
           }
           return eatUntilEOLIfNotAnnotation();
 
+        case TMC_SUPPRESS:
+          if (!jsdocBuilder.recordTmcSuppress()) {
+            parser.addParserWarning("msg.jsdoc.tmcsuppress",
+              stream.getLineno(), stream.getCharno());
+          }
+          return eatUntilEOLIfNotAnnotation();
+
         case DISPOSES: {
           ExtractionInfo templateInfo = extractSingleLineBlock();
           List<String> names = Splitter.on(',')

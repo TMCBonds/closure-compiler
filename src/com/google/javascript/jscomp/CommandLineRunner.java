@@ -492,6 +492,14 @@ public class CommandLineRunner extends
         usage = "Rewrite Polymer classes to be compiler-friendly.")
     private boolean polymerPass = false;
 
+    @Option(name = "--ext_pass",
+        hidden = true,
+        handler = BooleanOptionHandler.class,
+        usage = "Processes built-ins from the Extjs library, such as "
+        + "Ext.extend()")
+    private boolean extPass = false;
+
+    // Added by Daniel Kasierer for TMC Bonds
     @Option(name = "--output_manifest",
         hidden = true,
         usage = "Prints out a list of all the files in the compilation. "
@@ -1101,6 +1109,8 @@ public class CommandLineRunner extends
           .setTransformAMDToCJSModules(flags.transformAmdModules)
           .setWarningsWhitelistFile(flags.warningsWhitelistFile)
           .setAngularPass(flags.angularPass)
+          // Added by Daniel Kasierer for TMC Bonds
+          .setExtPass(flags.extPass)
           .setTracerMode(flags.tracerMode)
           .setNewTypeInference(flags.useNewTypeInference);
     }
@@ -1156,6 +1166,9 @@ public class CommandLineRunner extends
 
     options.jqueryPass = CompilationLevel.ADVANCED_OPTIMIZATIONS == level &&
         flags.processJqueryPrimitives;
+
+    // Added by Daniel Kasierer for TMC Bonds
+    options.extPass = flags.extPass;
 
     options.angularPass = flags.angularPass;
 

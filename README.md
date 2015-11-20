@@ -505,3 +505,35 @@ without make's wrinkles and with the full portability of pure java code.</td>
     <td>Substantial changes to make them compatible with NpmCommandLineRunner.</td>
   </tr>
 </table>
+
+## Extjs Compiling
+
+### Usage
+
+Use flag ```--ext_pass``` when running Closure Compiler
+
+### Extjs Closure Compiler Externs
+
+<table>
+  <tr>
+    <td>URL</td>
+    <td><a href="https://github.com/TMCBonds/ext-externs">https://github.com/TMCBonds/ext-externs</a></td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>Extjs extern for Closure Compiler</td>
+  </tr>
+</table>
+
+### Extjs Closure Compiler Extern Generator
+
+<table>
+  <tr>
+    <td>URL</td>
+    <td><a href="https://github.com/TMCBonds/ext-extern-generator">https://github.com/TMCBonds/ext-extern-generator</a></td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>Generates an extern file for Extjs using json from JSDuck</td>
+  </tr>
+</table>

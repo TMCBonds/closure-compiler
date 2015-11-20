@@ -1246,6 +1246,26 @@ public final class JSDocInfoBuilder {
   }
 
   /**
+   * Returns whether current JSDoc is annotated with {@code @tmcSuppress}.
+   */
+  public boolean isTmcSuppressRecorded() {
+    return currentInfo.isTmcSuppress();
+  }
+
+  /**
+   * Records that this should be suppressed by TMC.
+   */
+  public boolean recordTmcSuppress() {
+    if (!isTmcSuppressRecorded()) {
+      currentInfo.setTmcSuppress(true);
+      populated = true;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /**
    * Returns whether current JSDoc is annotated with {@code @polymerBehavior}.
    */
   public boolean isPolymerBehaviorRecorded() {

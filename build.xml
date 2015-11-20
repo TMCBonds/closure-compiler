@@ -161,6 +161,10 @@
     <copy file="${src.dir}/com/google/javascript/jscomp/parsing/ParserConfig.properties"
           todir="${classes.dir}/com/google/javascript/jscomp/parsing" />
 
+    <!-- Move ExtPass.properties where ExtPass.java expects it. # added by Daniel Kasierer -->
+    <copy file="${basedir}/ExtConfig.properties"
+          todir="${classes.dir}/com/google/javascript/jscomp" />
+
     <propertyfile
         file="${classes.dir}/com/google/javascript/jscomp/parsing/ParserConfig.properties"
         comment="Parser properties">

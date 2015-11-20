@@ -81,7 +81,8 @@ enum Annotation {
   TYPEDEF,
   UNRESTRICTED,
   VERSION,
-  WIZACTION;
+  WIZACTION,
+  TMC_SUPPRESS;
 
   static final Map<String, Annotation> recognizedAnnotations =
       new ImmutableMap.Builder<String, Annotation>().
@@ -147,5 +148,7 @@ enum Annotation {
       put("unrestricted", Annotation.UNRESTRICTED).
       put("version", Annotation.VERSION).
       put("wizaction", Annotation.WIZACTION).
+      // TMC annotations
+      put("tmcSuppress", Annotation.TMC_SUPPRESS).
       build();
 }
